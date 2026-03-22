@@ -1,0 +1,402 @@
+/* --- BASE STYLES (Common for all) --- */
+
+
+.mainpage {
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+
+  z-index: -900;
+  object-fit: cover;
+  background-color: rgb(16, 106, 0);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* --- 1. PHONE (Small screens) --- */
+@media (max-width: 480px) {
+  .mainpage {
+    /* On phone, we use 110% to ensure no white edges if the phone rotates */
+    width: 100dvw;
+    height: 110dvh;
+    top: 40%; /* Adjusted to 50% for perfect centering */
+    left: 50%;
+  }
+}
+
+/* --- 2. TABLET (Medium screens) --- */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .mainpage {
+    width: 100dvw;
+    height: 140dvh;
+    top: 60%; /* Adjusted to 50% for perfect centering */
+    left: 50%;
+  }
+  .titlehung {
+    color: #000;
+    font-family: "Roboto", "Franklin Gothic Medium", "Arial Narrow", Arial,
+      sans-serif;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+  }
+}
+
+/* --- 3. PC / DESKTOP (Large screens) --- */
+@media (min-width: 1025px) {
+  .mainpage {
+    /* On PC, we can stick to exact viewport or slightly more */
+    width: 100dvw;
+    height: 110dvh;
+    top: 30%; /* Adjusted to 50% for perfect centering */
+    left: 50%;
+  }
+}
+
+.titlehung {
+  color: black;
+  font-family: "Roboto", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.875rem;
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+
+.formulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3vh 0px;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .input-field {
+    font-family: "Rowdies", "Franklin Gothic Medium", "Arial Narrow", Arial,
+      sans-serif;
+    height: 6dvh;
+    width: 70%;
+
+    color: white;
+    background-color: #0c8323;
+    text-align: center;
+    font-size: 1.4rem;
+
+    border-radius: 20px;
+    border: 6px solid white;
+  }
+
+  .input-field::placeholder {
+    font-family: "Rowdies", "Franklin Gothic Medium", "Arial Narrow", Arial,
+      sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+  }
+}
+
+@media (min-width: 1025px) {
+  .input-field {
+    height: 4.4dvh;
+
+    color: white;
+
+    background-color: #0c8323;
+    text-align: center;
+    font-size: 1rem;
+
+    border-radius: 10px;
+    border: 6px solid white;
+  }
+  .input-field::placeholder {
+    font-family: "Rowdies", "Franklin Gothic Medium", "Arial Narrow", Arial,
+      sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+  }
+}
+
+.jugar {
+  background-color: #e68c00;
+  color: white;
+  border: 6px solid white;
+  width: 70%;
+  height: 8vh;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 50px;
+  font-family: "Rowdies", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+}
+
+.HUDheader {
+  background-color: transparent;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  border-radius: 50%;
+  padding-top: 2%;
+  border: 0px solid transparent;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-family:Roboto-regular;
+  color: #fff;
+  font-weight: bold;
+}
+
+.swal2-popup {
+  font-size: 14px !important;
+}
+
+.titlecoleccion {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+}
+
+.closer {
+  background-color: #e68c00;
+  color: white;
+  margin-top: 20%;
+  height: 6vh;
+  width: 50%;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: 2px solid white;
+  border-radius: 50px;
+}
+
+/* Exit button (top-right) */
+.exit-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 90;
+  background: rgba(0, 0, 0, 0.45);
+  border: none;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+.exit-button:hover {
+  background: rgba(0, 0, 0, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Interact button pulse animation */
+.interact-button {
+  animation: pulse 2s infinite;
+  /* fallback styles in case inline styles are removed later */
+  background: #ffe619;
+  color: #111827;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+  display: none !important;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 0, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px 15px rgba(255, 255, 0, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 0, 0);
+  }
+}
+
+
+
+/* The base state */
+.overlay-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  z-index: 3;
+  background-image: url('/overlay/overlay.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  
+  /* Smooth transition settings */
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.6s ease;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* The state when the form is dismissed */
+.overlay-container.hidden {
+  transform: translateY(-100%); /* Slides it up */
+  opacity: 0;
+  pointer-events: none; /* Prevents clicking invisible inputs */
+}
+
+
+
+/* The backdrop/overlay */
+.my-swal-container {
+  backdrop-filter: blur(5px);
+}
+
+/* The actual modal box */
+
+.swal-custom-popup {
+  background-image: url('/overlay/wood.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  border-radius: 15px !important;
+}
+
+/* The Title */
+.my-swal-title {
+  color: #FFFFFF !important;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: "Rowdies";
+}
+
+/* The Button */
+.my-swal-button {
+  background-color: #E68C00 !important;
+  color: #fff !important;
+  border: 2px solid white;
+  border-radius: 16px !important;
+  padding: 8px 10px !important;
+  font-family: "Rowdies";
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+
+
+
+
+/* The backdrop/overlay */
+.my-swal-containerfinal {
+  backdrop-filter: blur(5px);
+}
+
+.my-swal-textfinal {
+  color: white;
+}
+
+/* The actual modal box */
+
+.swal-custom-popupfinal {
+  background-image: url('/overlay/woodanimals.png') !important;
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat; 
+  border-radius: 15px !important;
+}
+
+/* The Title */
+.my-swal-titlefinal {
+  color: #FFFFFF !important;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: "Rowdies";
+}
+
+/* The Button */
+.my-swal-buttonfinal {
+  background-color: #E68C00 !important;
+  color: #fff !important;
+  border: 2px solid white;
+  border-radius: 16px !important;
+  padding: 8px 10px !important;
+  font-family: "Rowdies";
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+/* Estilo base (Móviles estándar) */
+.introduccion {
+  position: fixed;
+  pointer-events: none;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none; /* important for camera gestures */
+    background: 
+    #000 
+    url('/overlay/intro-md.png') 
+    center / contain 
+    no-repeat;
+}
+
+.intro-ui {
+  position: fixed;
+  inset: 0;
+  z-index: 4;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  padding-bottom: 6vh;
+  pointer-events: auto;
+}
+
+.intro-button {
+  background-color: #E68C00;
+  border: 2px solid white;
+  width: 35%;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 3vw;
+  padding-bottom: 3vw;
+  color: white;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-family: Rowdies;
+
+  position: absolute;
+    bottom: 18%;
+
+  left: 32.5%;
+}
+
+
+
+@media (min-height: 701px) and (max-height: 820px) {
+  .intro-button {
+    bottom: 15%;
+  }
+}
+
+
+@media (min-height: 781px) and (max-height: 820px) and (max-width: 360px)   {
+  .intro-button {
+    bottom: 25%;
+  }
+}
