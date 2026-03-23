@@ -13,7 +13,7 @@ export default function InfoButton() {
       confirmButtonColor: '#E68C00',
       customClass: {
         container: 'my-swal-override',
-        popup: 'swal-custom-popup',
+        popup: 'swal-custom-popup_instruccion',
         title: 'my-swal-title',
         confirmButton: 'my-swal-button',
         

@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Rowdies';
-  src: url('font/Rowdies-Regular.tff') format('tff');
+  font-family: 'Cygun';
+  src: url('font/CYGUN-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -8,8 +8,8 @@
 
 
 @font-face {
-  font-family: 'Roboto-regular';
-  src: url('font/Roboto-Regular.tff') format('tff');
+  font-family: 'Mont';
+  src: url('font/Monsterrat-Bold.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
 }

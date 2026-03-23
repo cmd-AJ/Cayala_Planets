@@ -35,9 +35,9 @@
   }
   .titlehung {
     color: #000;
-    font-family: "Roboto", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    font-family: "Cygun", "Franklin Gothic Medium", "Arial Narrow", Arial,
       sans-serif;
-    font-weight: bold;
+    font-weight: 200;
     width: 100%;
     text-align: center;
     font-size: 1rem;
@@ -57,9 +57,9 @@
 
 .titlehung {
   color: black;
-  font-family: "Roboto", "Franklin Gothic Medium", "Arial Narrow", Arial,
+  font-family: "Cygun", "Franklin Gothic Medium", "Arial Narrow", Arial,
     sans-serif;
-  font-weight: bold;
+  font-weight: 200;
   text-align: center;
   font-size: 1.875rem;
   margin-top: 0px;
@@ -98,7 +98,7 @@ input-field:focus {
   }
 
   .input-field {
-    font-family: "Rowdies", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    font-family: "Mont", "Franklin Gothic Medium", "Arial Narrow", Arial,
       sans-serif;
     height: 90%;
     width: 97.5%;
@@ -109,7 +109,7 @@ input-field:focus {
     background-color: #FFFFFF;
     
     
-    font-size: 0.6rem;
+    font-size: 1rem;
     border-color: #008dc2;
     border: 0.02rem solid #008dc2;
     outline: none;
@@ -117,10 +117,10 @@ input-field:focus {
   }
 
   .input-field::placeholder {
-    font-family: "Rowdies", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    font-family: "Mont", "Franklin Gothic Medium", "Arial Narrow", Arial,
       sans-serif;
     font-weight: bold;
-    font-size: 0.45rem;
+    font-size: 0.6rem;
     left: 5%;
     top: 20%;
     position: absolute;
@@ -153,7 +153,7 @@ input-field:focus {
     border: 6px solid white;
   }
   .input-field::placeholder {
-    font-family: "Rowdies", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    font-family: "Cygun", "Franklin Gothic Medium", "Arial Narrow", Arial,
       sans-serif;
     font-weight: bold;
     font-size: 1rem;
@@ -172,9 +172,9 @@ input-field:focus {
 
   background-color: #fe6c17;
   color: white;
-  font-size: 1.5rem;
-  font-weight: 600;
-  font-family: "Rowdies", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 200;
+  font-family: "Cygun", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   cursor: pointer;
   box-sizing: border-box;
   border: none;
@@ -209,9 +209,9 @@ input-field:focus {
   justify-content: center;
   align-items: center;
   display: flex;
-  font-family:Roboto-regular;
+  font-family:Rowdies;
   color: #fff;
-  font-weight: bold;
+  font-weight: 200;
 }
 
 .swal2-popup {
@@ -219,7 +219,7 @@ input-field:focus {
 }
 
 .titlecoleccion {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: Rowdies;
   text-align: center;
 }
 
@@ -340,6 +340,13 @@ input-field:focus {
 
 }
 
+.swal-custom-popup_instruccion {
+  background: url('../../assets/overlay/Register.png');
+  background-size: cover !important;
+  background-position: center !important;
+
+}
+
 .swal-custom-popupgifs {
   background: transparent;
   background-size: cover !important;
@@ -353,8 +360,7 @@ input-field:focus {
   color: #FFFFFF !important;
   text-transform: uppercase;
   font-size: 1.8rem;
-  font-weight: bold;
-  font-family: "Rowdies";
+  font-family: "Mont";
 }
 
 .my-swal-button {
@@ -363,10 +369,11 @@ input-field:focus {
   border-bottom: 2px solid black;
   border-left: 2px solid black;
   padding: 8px 20px 8px 14px !important;
-  font-family: "Rowdies";
-  font-weight: bold;
+  font-family: "Cygun";
   font-size: 1.2rem;
   clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 80% 100%, 0 100%, 0% 80%, 0% 20%);
+  font-family: "Cygun";
+  font-weight: 200;
 }
 
 /* fe6c17 */
@@ -376,8 +383,8 @@ input-field:focus {
   background-color: #fe6c17 !important; 
   color: #fff !important;
   padding: 0.7vh 9vw 0.7vh 9vw !important;
-  font-family: "Rowdies";
-  font-weight: bold;
+  font-family: "Cygun";
+  font-weight: 200;
   font-size: 1.2rem;
   clip-path: polygon(8% 0, 100% 0, 100% 64%, 92% 100%, 0 100%, 0% 36%);
   border-radius: none;
@@ -410,7 +417,7 @@ input-field:focus {
   text-transform: uppercase;
   font-size: 1.8rem;
   font-weight: bold;
-  font-family: "Rowdies";
+  font-family: "Cygun";
 }
 
 /* The Button */
@@ -420,7 +427,7 @@ input-field:focus {
   border: 2px solid white;
   border-radius: 16px !important;
   padding: 8px 10px !important;
-  font-family: "Rowdies";
+  font-family: "Cygun";
   font-weight: bold;
   font-size: 0.8rem;
 }
@@ -464,7 +471,7 @@ input-field:focus {
   padding-bottom: 3vw;
   color: white;
   font-size: 1rem;
-  font-family: Rowdies;
+  font-family: "Cygun";
 
   position: absolute;
   bottom: 18%;
