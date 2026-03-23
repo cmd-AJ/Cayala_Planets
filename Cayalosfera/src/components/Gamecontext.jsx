@@ -2,6 +2,8 @@ import React, { createContext, useState, useEffect, useContext } from 'react';
 import Swal from 'sweetalert2';
 import { DINO_IDS, ACcumulatorGIFS } from '../config';
 import { registerUser, updateDinoOnServer, getDinosFromServer } from '../api';
+import felicidadesImg from '/src/assets/overlay/Felicidades.png';
+
 
 const GameContext = createContext();
 
@@ -130,7 +132,7 @@ export const GameProvider = ({ children }) => {
       setTimeout(() => {
             // 3. Alert UI
           Swal.fire({
-          background: `url(src/assets/overlay/Felicidades.png)`,
+          background: `url(${felicidadesImg})`,
           showConfirmButton: true,
           confirmButtonText: 'Aceptar',
           customClass: {

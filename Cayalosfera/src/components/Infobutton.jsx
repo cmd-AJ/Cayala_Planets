@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import Swal from 'sweetalert2';
+import instructionsImg from '/src/assets/overlay/Instruccions.png';
 
 export default function InfoButton() {
 
   
   const showInstructions = () => {
     Swal.fire({
-      imageUrl:  'src/assets/overlay/Instruccions.png',
+      imageUrl:  instructionsImg,
         imageWidth: 280,
       confirmButtonText: 'Empezar',
       confirmButtonColor: '#E68C00',

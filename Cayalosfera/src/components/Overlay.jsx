@@ -3,8 +3,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { useGame } from './Gamecontext';
 import "./css/overlay.css"
-import { FiLogOut } from 'react-icons/fi';
 import { DINO_ASSETS } from '../config';
+import titleImg from '../assets/overlay/CayalosferaTitle.png';
+import logoImg from '../assets/overlay/logo.png';
+import coleccionBg from '../assets/overlay/coleccion.png';
+
 
 export default function UIOverlay() {
   const { user, handleRegister, foundDinos, handleLogout } = useGame();
@@ -141,7 +144,7 @@ export default function UIOverlay() {
       {/* HUD Header */}
       <div style={{ pointerEvents: 'auto', padding: 10, paddingLeft:30, display: 'flex', justifyContent: 'space-between' }}>
         <button className='HUDheader' onClick={() => setShowProgress(true)}>
-          <img width={100} height={30} src='src/assets/overlay/CayalosferaTitle.png'></img>
+          <img width={100} height={30} src={titleImg}></img>
         </button>
         
       </div>
@@ -188,7 +191,7 @@ export default function UIOverlay() {
         }}>
 
             <button style={{position:'absolute', top:"1.9%", left:"4%"}} className='HUDheader' onClick={() => setShowProgress(true)}>
-          <img width={40} height={40} src='/overlay/logo.png'></img>
+          <img width={40} height={40} src={logoImg}></img>
         </button>
 
             <div style={{ pointerEvents: 'auto', padding: 10, display: 'flex', justifyContent: 'space-between' }}>
@@ -217,7 +220,7 @@ export default function UIOverlay() {
       </div>
 
 
-          <div style={{ backgroundImage: `url('/overlay/coleccion.png')`,backgroundSize: 'cover', padding: 20, borderRadius: "10px", paddingBottom: "15%" }}>
+          <div style={{ backgroundImage: `url('${coleccionBg}')`,backgroundSize: 'cover', padding: 20, borderRadius: "10px", paddingBottom: "15%" }}>
             <h2 className='titlecoleccion'><span style={{fontFamily:"Rowdies", color:"#FFCC00"}} >¡</span>MI COLECCIÓN<span style={{fontFamily:"Rowdies", color:"#FFCC00"}} >!</span></h2>
 
             
