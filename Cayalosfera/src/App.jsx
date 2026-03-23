@@ -7,7 +7,7 @@ import InfoButton from './components/Infobutton'
 function App() {
 
 
-  const mindFilePath = "src/assets/Planets.mind";
+  const mindFilePath = "/Planets.mind";
 
   // 2. THE ARRAY OF MODELS
   // The order here MUST match the order inside the .mind file
