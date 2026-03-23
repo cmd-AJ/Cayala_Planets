@@ -7,21 +7,20 @@ import InfoButton from './components/Infobutton'
 function App() {
 
 
-  const mindFilePath = "/Animals.mind";
+  const mindFilePath = "src/assets/Planets.mind";
 
   // 2. THE ARRAY OF MODELS
   // The order here MUST match the order inside the .mind file
   const animalModels = [
-    "/modelos/Capibara.glb",    // Index 0
-    "/modelos/Cocodrilo.glb",   // Index 1
-    "/modelos/Elefante.glb",    // Index 2
-    "/modelos/Guacamayo.glb",   // Index 3
-    "/modelos/Leopardo.glb",     // Index 5
-    "/modelos/Jirafa.glb",      // Index 4
-    "/modelos/Leon.glb",        // Index 4
-    "/modelos/Pinguino.glb",    // Index 6
-    "/modelos/Rinoceronte.glb", // Index 7
-    "/modelos/Tigre.glb"        // Index 8
+    "/modelos/jupiter.glb",    // Index 0
+    "/modelos/earth.glb",   // Index 1
+    "/modelos/mars.glb",    // Index 2
+    "/modelos/mercury.glb",   // Index 3
+    "/modelos/neptune.glb",     // Index 5
+    "/modelos/saturn.glb",      // Index 4
+    "/modelos/sun.glb",        // Index 4
+    "/modelos/uranus.glb",    // Index 6
+
   ];
 
   return (

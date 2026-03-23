@@ -52,23 +52,23 @@ export default function ARScene({ path, animalPaths = [] }) {
 
     const onTargetFound = (event) => {
       const index = parseInt(event.target.getAttribute("data-index"));
-      const audio = new Audio(`/audio/animal_${index}.mp3`);
+      // const audio = new Audio(`/audio/animal_${index}.mp3`);
 
       // const audio = new Audio(`/audio/animal_${index}.mp3`);
 
       // Show the interact button (was hidden by default)
-      try {
-        if (btn) {
-          btn.classList.remove("hidden");
-          // ensure it's focusable / visible
-          btn.focus && btn.focus();
-          btn.onclick = () => {
-            audio.play().catch(e => console.log("Audio play blocked:", e));
-          }
-        }
-      } catch (e) {
-        console.warn('Could not show interact button', e);
-      }
+      // try {
+      //   if (btn) {
+      //     btn.classList.remove("hidden");
+      //     // ensure it's focusable / visible
+      //     btn.focus && btn.focus();
+      //     btn.onclick = () => {
+      //       audio.play().catch(e => console.log("Audio play blocked:", e));
+      //     }
+      //   }
+      // } catch (e) {
+      //   console.warn('Could not show interact button', e);
+      // }
 
       targetEntities.forEach((el) => {
         el.addEventListener("targetLost", () => {
@@ -79,14 +79,11 @@ export default function ARScene({ path, animalPaths = [] }) {
 
       // 2. TRIGGER ONLY ONCE: Check if already played
       if (!playedDinos.current.has(index)) {
-        console.log("🔊 Playing sound for index:", index);
 
-        // Use standard HTML5 Audio
-        // const audio = new Audio(`/audio/animal_${index}.mp3`);
-        audio.play().catch(e => console.log("Audio play blocked:", e));
 
         // Mark as played and update game state
         playedDinos.current.add(index);
+        console.log("Indice", index)
         handleDinoFound(index);
 
 
@@ -144,14 +141,14 @@ export default function ARScene({ path, animalPaths = [] }) {
             mindar-image-target={`targetIndex: ${index}`}
           >
             {/* <a-box color="tomato" depth="0.5" height="0.5" width="0.5"></a-box> */}
-            <a-gltf-model animation-mixer position="0 -0.7 0" src="/modelos/portal.glb" scale="0.8 0.8 0.8" />
-            <a-gltf-model src="/modelos/SoloCartel.glb" scale="0.4 0.4 0.4" position="0 -0.43 0.13" />
+            {/* <a-gltf-model animation-mixer position="0 -0.7 0" src="/modelos/portal.glb" scale="0.8 0.8 0.8" />
+            <a-gltf-model src="/modelos/SoloCartel.glb" scale="0.4 0.4 0.4" position="0 -0.43 0.13" /> */}
 
 
             <a-gltf-model
               src={modelUrl}
-              scale="0.8 0.8 0.8"
-              position="0 -0.7 0"
+              scale="0.1 0.1 0.1"
+              position="0 0 0"
               animation-mixer
               make-unlit
             ></a-gltf-model>

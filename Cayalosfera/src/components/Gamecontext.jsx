@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import Swal from 'sweetalert2';
-import { DINO_IDS, DINO_ASSETS } from '../config';
+import { DINO_IDS, ACcumulatorGIFS } from '../config';
 import { registerUser, updateDinoOnServer, getDinosFromServer } from '../api';
 
 const GameContext = createContext();
@@ -104,18 +104,20 @@ export const GameProvider = ({ children }) => {
     const newFoundList = [...foundDinos, dinoId];
     setFoundDinos(newFoundList);
 
+    console.log(ACcumulatorGIFS[newFoundList.length-1])
+
+
     // 3. Alert UI
     Swal.fire({
-      title: '<span style="color: #FFCD00">¡</span>AGREGADO A TU COLECCIÓN<span style="color: #FFCD00">!</span>',
-      imageUrl: DINO_ASSETS[dinoId] || 'https://via.placeholder.com/150',
-      imageWidth: 200,
-      confirmButtonText: 'Recolectar',
-      customClass: {
+    background: `url(${ACcumulatorGIFS[newFoundList.length - 1]})`,
+    showConfirmButton: true,
+    confirmButtonText: 'Aceptar',
+    customClass: {
       container: 'my-swal-container',
-      popup: 'swal-custom-popup',
-      title: 'my-swal-title',
-      confirmButton: 'my-swal-button',
-  }
+      popup: 'swal-custom-popupgifs',
+      confirmButton: 'my-swal-buttongifs',
+    }
+  
     });
 
     // 4. Update Server
@@ -124,21 +126,19 @@ export const GameProvider = ({ children }) => {
     }
 
     // 5. Check Win Condition
-    if (newFoundList.length === 10) {
+    if (newFoundList.length === 8) {
       setTimeout(() => {
-        Swal.fire({
-            title: '<span style="color: #FFCD00">¡</span>FELICIDADES<span style="color: #FFCD00">!</span>',
-            html:'<span style="color: #fff, fontFamily:"Rowdies" >HAZ COMPLETADO EL <br> EXPLORA ZOO.</span">', 
-            imageUrl: "/overlay/logo.png" || 'https://via.placeholder.com/150',
-            imageWidth: 200,
-            confirmButtonText: 'CONTINUAR',
-            customClass: {
-            container: 'my-swal-containerfinal',
-            htmlContainer: 'my-swal-textfinal',
-            popup: 'swal-custom-popupfinal',
-            title: 'my-swal-titlefinal',
-            confirmButton: 'my-swal-buttonfinal',
-        }
+            // 3. Alert UI
+          Swal.fire({
+          background: `url(src/assets/overlay/Felicidades.png)`,
+          showConfirmButton: true,
+          confirmButtonText: 'Aceptar',
+          customClass: {
+            container: 'my-swal-container',
+            popup: 'swal-custom-popupgifs',
+            confirmButton: 'my-swal-buttongifs',
+          }
+        
           });
       }, 4000);
     }

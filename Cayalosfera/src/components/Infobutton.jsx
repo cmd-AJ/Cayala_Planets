@@ -6,15 +6,15 @@ export default function InfoButton() {
   
   const showInstructions = () => {
     Swal.fire({
-      imageUrl:  '/overlay/Instrucciones.png',
+      imageUrl:  'src/assets/overlay/Instruccions.png',
         imageWidth: 280,
-      confirmButtonText: '¡Entendido!',
+      confirmButtonText: 'Empezar',
       confirmButtonColor: '#E68C00',
       customClass: {
         container: 'my-swal-override',
-          popup: 'swal-custom-popup',
-          title: 'my-swal-title',
-          confirmButton: 'my-swal-button',
+        popup: 'swal-custom-popup',
+        title: 'my-swal-title',
+        confirmButton: 'my-swal-button',
         
       }
     });
@@ -24,7 +24,7 @@ export default function InfoButton() {
     // Small delay (500ms) ensures the AR and UI are ready 
     // before the popup hits the screen
     const timer = setTimeout(() => {
-      showInstructions();
+    showInstructions();
     }, 500);
 
     return () => clearTimeout(timer);

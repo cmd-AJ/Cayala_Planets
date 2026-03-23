@@ -12,7 +12,7 @@ export default function UIOverlay() {
   // Local form state
   const [formData, setFormData] = useState({ nombre: '', correo: '', telefono: '' });
   const [showProgress, setShowProgress] = useState(false);
-  const [Introduced, isIntroduced] = useState(false);
+  const [Introduced, isIntroduced] = useState(true);
 
 
   
@@ -45,38 +45,75 @@ export default function UIOverlay() {
       {Introduced ? (
           <div className={`overlay-container ${!Introduced ? 'hidden' : ''}`}>
 
-            <div style={{ backgroundColor: "transparent", width: "100%", height: "35%", display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}>
-              <img src="/overlay/logo_explora_zoo.png" alt="Explora Zoo" style={{ maxWidth: '80%', maxHeight: '80%', objectFit: 'contain' }} />
-            </div>
-
-            <div style={{ backgroundColor: "transparent", width: "100%", height: "65%", display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start' }}>
-              <h2 className='titlehung'>REGISTRATE</h2>
+            <div style={{ marginTop:"40dvh", backgroundColor: "transparent", width: "100%", height: "65%", display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start' }}>
 
               <form onSubmit={onSubmit} className='formulario'>
+                <div
+                className='masker'
+                style={{
+                    clipPath: "polygon(18% 0%, 80% 0%, 100% 0, 100% 82%, 82% 100%, 0 100%, 0% 80%, 0% 18%)"
+                  }}
+                >
                 <input
-                  placeholder="Nombre"
+                  placeholder="Nombre: "
                   className="input-field"
                   value={formData.nombre}
                   onChange={e => setFormData({ ...formData, nombre: e.target.value })}
                   required
+                  style={{
+                    clipPath: "polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 80% 100%, 0 100%, 0% 80%, 0% 20%)"
+                  }}
                 />
+                </div>
+
+                 <div
+                className='masker'
+                style={{
+                    clipPath: "polygon(0 0, 82% 0%, 100% 18%, 100% 80%, 100% 100%, 18% 100%, 0% 82%, 0% 18%)"
+                  }}
+                >
+
                 <input
-                  placeholder="Correo"
+                  placeholder="Correo: "
                   type="email"
                   className="input-field"
                   value={formData.correo}
                   onChange={e => setFormData({ ...formData, correo: e.target.value })}
                   required
+                style={{
+                    clipPath: "polygon(0 0, 80% 0%, 100% 20%, 100% 80%, 100% 100%, 20% 100%, 0% 80%, 0% 20%)"
+                  }}
+
                 />
+
+                </div>
+                
+                <div
+                className='masker'
+                style={{
+                     clipPath: "polygon(18% 0%, 80% 0%, 100% 0, 100% 82%, 82% 100%, 0 100%, 0% 80%, 0% 18%)"
+                  }}
+                >
+
                 <input
-                  placeholder="Teléfono"
+                  placeholder="Teléfono: "
                   type="tel"
                   className="input-field"
                   value={formData.telefono}
                   onChange={e => setFormData({ ...formData, telefono: e.target.value })}
                   required
+                  style={{
+                    clipPath: "polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 80% 100%, 0 100%, 0% 80%, 0% 20%)"
+                  }}
                 />
-                <button className='jugar' type="submit">¡JUGAR!</button>
+
+                </div>
+
+                <div className='jugar-wrapper'>
+                <button className='jugar' type="submit">Aceptar</button>
+                </div>
+
+
               </form>
             </div>
           </div>
@@ -104,22 +141,21 @@ export default function UIOverlay() {
       {/* HUD Header */}
       <div style={{ pointerEvents: 'auto', padding: 10, paddingLeft:30, display: 'flex', justifyContent: 'space-between' }}>
         <button className='HUDheader' onClick={() => setShowProgress(true)}>
-          <img width={26} height={26} src='/overlay/logo.png'></img>
-          <div style={{marginLeft:"10%" }}>EXPLORA ZOO</div>
+          <img width={100} height={30} src='src/assets/overlay/CayalosferaTitle.png'></img>
         </button>
         
       </div>
 
         <div style={{ pointerEvents: 'auto', padding: 10, display: 'flex', justifyContent: 'space-between' }}>
-        {[...Array(10)].map((_, i) => {
-          const dinoId = `animal_${i}`;
+        {[...Array(8)].map((_, i) => {
+          const dinoId = `planeta_${i}`;
           const isFound = foundDinos.includes(dinoId);
           const imageSrc = DINO_ASSETS[dinoId];
 
           return (
             <div id={dinoId} key={dinoId} >
               <img
-                width={30}
+                width={40}
                 src={imageSrc}
                 style={{
                   // If not found, make it gray and slightly transparent
@@ -156,8 +192,8 @@ export default function UIOverlay() {
         </button>
 
             <div style={{ pointerEvents: 'auto', padding: 10, display: 'flex', justifyContent: 'space-between' }}>
-        {[...Array(10)].map((_, i) => {
-          const dinoId = `animal_${i}`;
+        {[...Array(8)].map((_, i) => {
+          const dinoId = `planeta_${i}`;
           const isFound = foundDinos.includes(dinoId);
           const imageSrc = DINO_ASSETS[dinoId];
 
@@ -188,15 +224,15 @@ export default function UIOverlay() {
             <div style={{ 
                 display: 'flex', 
                 flexWrap: 'wrap', 
-                gap: 10, 
+                gap: 8, 
                 justifyContent: 'center', // Centers the items horizontally
                 maxWidth: '260px',       // Limits width so it still looks like a grid (~4 items wide)
                 margin: '0 auto'         // Centers the whole container
               }}>
-              {[...Array(10)].map((_, i) => {
+              {[...Array(8)].map((_, i) => {
                 // UPDATE 1: Match the ID to your config (animal_0, animal_1...)
                 // We use 'i' instead of 'i+1' because your config starts at 0
-                const dinoId = `animal_${i}`;
+                const dinoId = `planeta_${i}`;
 
                 const isFound = foundDinos.includes(dinoId);
 
