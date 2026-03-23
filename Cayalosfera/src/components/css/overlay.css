@@ -303,7 +303,7 @@ input-field:focus {
   right: 0;
   background-color: #000;
   z-index: 3;
-  background-image: url('src/assets/overlay/Register.png');
+  background-image: url('../../assets/overlay/Register.png');
   background-size: cover;
   background-position: center;
   display: flex;
