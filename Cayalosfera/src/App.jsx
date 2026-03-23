@@ -3,11 +3,11 @@ import ARScene from './components/ARScene'
 import { GameProvider } from './components/Gamecontext'
 import UIOverlay from './components/Overlay'
 import InfoButton from './components/Infobutton'
-import mindFile from "./assets/Planets.mind";
 
 function App() {
 
 
+  const mindFilePath = "src/assets/Planets.mind";
 
   // 2. THE ARRAY OF MODELS
   // The order here MUST match the order inside the .mind file
@@ -33,7 +33,7 @@ function App() {
       <InfoButton></InfoButton>
       <GameProvider>
         <div className="App" style={{ position: 'relative', width: '100vw', height: '100vh' }}>
-          <ARScene path={mindFile} animalPaths={animalModels} />
+          <ARScene path={mindFilePath} animalPaths={animalModels} />
           <UIOverlay />
         </div>
       </GameProvider>
