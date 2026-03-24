@@ -151,6 +151,7 @@ export default function ARScene({ path, animalPaths = [] }) {
               position="0 0 0"
               animation-mixer
               make-unlit
+              animation="property: rotation; to: 0 360 0; loop: true; dur: 16000; easing: linear"
             ></a-gltf-model>
 
 
