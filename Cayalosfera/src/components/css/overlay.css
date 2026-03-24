@@ -341,7 +341,7 @@ input-field:focus {
 }
 
 .swal-custom-popup_instruccion {
-  background: url('../../assets/overlay/Register.png');
+  background: url('../../assets/overlay/Instruccions.png');
   background-size: cover !important;
   background-position: center !important;
 

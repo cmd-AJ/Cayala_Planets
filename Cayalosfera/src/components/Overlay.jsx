@@ -51,6 +51,28 @@ export default function UIOverlay() {
             <div style={{ marginTop:"40dvh", backgroundColor: "transparent", width: "100%", height: "65%", display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start' }}>
 
               <form onSubmit={onSubmit} className='formulario'>
+
+                <div style={{ position: "relative", display: "inline-block" }}>
+  {/* Label tag in the top-left corner */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: -14,
+                      left: 10,
+                      backgroundColor: "white",
+                      border: "1.5px solid #29b6d8",
+                      color: "#29b6d8",
+                      fontSize: "11px",
+                      fontWeight: "bold",
+                      padding: "2px 12px 2px 10px",
+                      clipPath: "polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%)",
+                      letterSpacing: "0.05em",
+                      zIndex: 1,
+                    }}
+                  >
+                    NOMBRE:
+                  </div>
+
                 <div
                 className='masker'
                 style={{
@@ -68,6 +90,9 @@ export default function UIOverlay() {
                   }}
                 />
                 </div>
+
+                  </div>
+
 
                  <div
                 className='masker'
