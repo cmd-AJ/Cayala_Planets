@@ -147,7 +147,7 @@ export default function ARScene({ path, animalPaths = [] }) {
                 src="/modelos/saturnring.glb"
                 scale="0.12 0.12 0.12"
                 position="0 0 0"
-                rotation="-200 0 0"
+                rotation="-20 180 20"
               />
             )}
 
