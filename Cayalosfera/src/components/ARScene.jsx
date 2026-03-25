@@ -141,13 +141,20 @@ export default function ARScene({ path, animalPaths = [] }) {
             mindar-image-target={`targetIndex: ${index}`}
           >
             {/* <a-box color="tomato" depth="0.5" height="0.5" width="0.5"></a-box> */}
-            {/* <a-gltf-model animation-mixer position="0 -0.7 0" src="/modelos/portal.glb" scale="0.8 0.8 0.8" />
-            <a-gltf-model src="/modelos/SoloCartel.glb" scale="0.4 0.4 0.4" position="0 -0.43 0.13" /> */}
+  
+            {index == 5 && (
+              <a-gltf-model
+                src="/modelos/saturnring.glb"
+                scale="0.12 0.12 0.12"
+                position="0 0 0"
+                rotation="-200 0 0"
+              />
+            )}
 
 
             <a-gltf-model
               src={modelUrl}
-              scale="0.15 0.15 0.15"
+              scale="0.12 0.12 0.12"
               position="0 0 0"
               animation-mixer
               make-unlit
