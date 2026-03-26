@@ -86,48 +86,71 @@ input-field:focus {
   outline: none;
 }
 
+.input-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: white;
+  height: 100%;
+  width: 100%;
+  padding: 0 12px;
+  box-sizing: border-box;
+  gap: 8px;
+}
 
+.fake-label {
+  font-weight: bold;
+  color: #008dc2;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.input-field {
+  font-family: "Mont", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #008dc2;
+  background: white;
+  font-size: 0.95rem;
+  border: none;
+  border-left: 0.5px solid #008dc2;
+  outline: none;
+  padding-left: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Mobile */
 @media (max-width: 1024px) {
-
-  .masker{
+  .masker {
     background-color: #008dc2;
-    height: 6.2dvh;
-    padding: 1px;
+    height: 6dvh;
+    padding:2px;
     width: 70%;
+  }
 
+  .input-inner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4px 10px;
+    gap: 0;
+  }
+
+  .fake-label {
+    line-height: 1;
   }
 
   .input-field {
-    font-family: "Mont", "Franklin Gothic Medium", "Arial Narrow", Arial,
-      sans-serif;
-    height: 90%;
-    width: 97.5%;
-    text-align: center;
-  
-
-    color: #008dc2;
-    background-color: #FFFFFF;
-    
-    
-    font-size: 1rem;
-    border-color: #008dc2;
-    border: 0.02rem solid #008dc2;
-    outline: none;
-
-  }
-
-  .input-field::placeholder {
-    font-family: "Mont", "Franklin Gothic Medium", "Arial Narrow", Arial,
-      sans-serif;
-    font-weight: bold;
-    font-size: 0.6rem;
-    left: 5%;
-    top: 20%;
-    position: absolute;
-    color: #008dc2;
-;
+    height: auto;
+    width: 100%;
+    text-align: left;
+    font-size: 0.85rem;
+    border: none;
+    padding: 0;
+    margin-top: 4px;
+    line-height: 1;
   }
 }
+
 
 @media (min-width: 1025px) {
 
@@ -140,18 +163,17 @@ input-field:focus {
   }
 
   .input-field {
-    height: 4.4dvh;
-
-    color: white;
-
-    background-color: #0c8323;
-    text-align: center;
-    font-size: 0.6rem;
-
-
-    border-radius: 10px;
-    border: 6px solid white;
+    height: auto;
+    width: 100%;
+    text-align: left;
+    font-size: 0.85rem;
+    border: none;
+    padding: 0;
+    margin-top: 4px;
+    line-height: 1;
   }
+
+
   .input-field::placeholder {
     font-family: "Cygun", "Franklin Gothic Medium", "Arial Narrow", Arial,
       sans-serif;
@@ -330,6 +352,7 @@ input-field:focus {
 
 /* The backdrop/overlay */
 .my-swal-container {
+  font-family: "Cygun";
   backdrop-filter: blur(5px);
 }
 
@@ -494,4 +517,12 @@ input-field:focus {
   .intro-button {
     bottom: 25%;
   }
+}
+
+.fake-label {
+  position: relative;
+  background: white;
+  padding: 0 4px;
+  z-index: 2;
+  font-size: 0.5rem;
 }

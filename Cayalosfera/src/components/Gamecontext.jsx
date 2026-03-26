@@ -58,7 +58,7 @@ export const GameProvider = ({ children }) => {
         localStorage.setItem('dataId', data.usuario._id);
         setUser(data.usuario);
          Swal.fire({
-          title: '<span style="color: #FFCD00">¡</span>ÉXITO<span style="color: #FFCD00">!</span>',
+          title: '<span style="color: #ffffff">¡</span>ÉXITO<span style="color: #ffffff">!</span>',
           icon:'success',
           confirmButtonText: 'Usuario registrado',
           customClass: {
@@ -70,7 +70,7 @@ export const GameProvider = ({ children }) => {
         });
       } else {
          Swal.fire({
-          title: '<span style="color: #FFCD00">¡</span>Ha occurrido un error<span style="color: #FFCD00">!</span>',
+          title: '<span style="color: #ffffff">¡</span>Ha occurrido un error<span style="color: #ffffff">!</span>',
           icon:'error',
           confirmButtonText: error.message,
           customClass: {
@@ -83,7 +83,7 @@ export const GameProvider = ({ children }) => {
       }
     } catch (error) {
        Swal.fire({
-          title: '<span style="color: #FFCD00">¡</span>Número de Teléfono No válido<span style="color: #FFCD00">!</span>',
+          title: '<span style="color: #ffffff">¡</span>Error Vuelva a Intentarlo<span style="color: #ffffff">!</span>',
           icon:'error',
           confirmButtonText: "Regresar",
           customClass: {
@@ -139,7 +139,11 @@ export const GameProvider = ({ children }) => {
             container: 'my-swal-container',
             popup: 'swal-custom-popupgifs',
             confirmButton: 'my-swal-buttongifs',
-          }
+          }.then((result) => {
+              if (result.isConfirmed) {
+                window.open('/files/prueba_pdf.pdf', '_blank');
+              }
+            })
         
           });
       }, 4000);

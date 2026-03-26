@@ -13,10 +13,11 @@ export default function UIOverlay() {
   const { user, handleRegister, foundDinos, handleLogout } = useGame();
 
   // Local form state
-  const [formData, setFormData] = useState({ nombre: '', correo: '', telefono: '' });
+  const [formData, setFormData] = useState({ nombre: '', correo: '', telefono: '', kids:"", adults:"" });
   const [showProgress, setShowProgress] = useState(false);
   const [Introduced, isIntroduced] = useState(true);
 
+  
 
   
 
@@ -48,20 +49,21 @@ export default function UIOverlay() {
       {Introduced ? (
           <div className={`overlay-container ${!Introduced ? 'hidden' : ''}`}>
 
-            <div style={{ marginTop:"40dvh", backgroundColor: "transparent", width: "100%", height: "65%", display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start' }}>
+            <div style={{ marginTop:"26dvh", backgroundColor: "transparent", width: "100%", height: "65%", display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start' }}>
 
-              <form onSubmit={onSubmit} className='formulario'>
+              <form onSubmit={onSubmit} className='formulario' style={{paddingTop:"4dvh"}}>
 
             
 
                 <div
                 className='masker'
                 style={{
-                    clipPath: "polygon(18% 0%, 80% 0%, 100% 0, 100% 82%, 82% 100%, 0 100%, 0% 80%, 0% 18%)"
+                    clipPath: "polygon(18% 0%, 80% 0%, 100% 0, 100% 82%, 82% 100%, 0 100%, 0% 80%, 0% 18%)",
                   }}
                 >
+                <div className="input-inner">
+                 <label className="fake-label">NOMBRE:</label>
                 <input
-                  placeholder="Nombre: "
                   className="input-field"
                   value={formData.nombre}
                   onChange={e => setFormData({ ...formData, nombre: e.target.value })}
@@ -71,6 +73,8 @@ export default function UIOverlay() {
                   }}
                 />
                 </div>
+                </div>
+
 
                  <div
                 className='masker'
@@ -79,8 +83,10 @@ export default function UIOverlay() {
                   }}
                 >
 
+                <div className="input-inner">
+                  <label className="fake-label">CORREO:</label>
+
                 <input
-                  placeholder="Correo: "
                   type="email"
                   className="input-field"
                   value={formData.correo}
@@ -91,29 +97,81 @@ export default function UIOverlay() {
                   }}
 
                 />
+                </div>
 
                 </div>
                 
-                <div
+                <div className='masker' style={{
+                  clipPath: "polygon(18% 0%, 80% 0%, 100% 0, 100% 82%, 82% 100%, 0 100%, 0% 80%, 0% 18%)"
+                }}>
+                  <div className="input-inner">
+                    <label className="fake-label">TELÉFONO:</label>
+                    <input
+                      type="tel"
+                      className="input-field"
+                      value={formData.telefono}
+                      onChange={e => setFormData({ ...formData, telefono: e.target.value })}
+                      required
+                    />
+                  </div>
+                </div>
+
+
+                
+                 <div
                 className='masker'
                 style={{
-                     clipPath: "polygon(18% 0%, 80% 0%, 100% 0, 100% 82%, 82% 100%, 0 100%, 0% 80%, 0% 18%)"
+                    clipPath: "polygon(0 0, 82% 0%, 100% 18%, 100% 80%, 100% 100%, 18% 100%, 0% 82%, 0% 18%)"
                   }}
                 >
 
+                  <div className="input-inner">
+                    <label className="fake-label">¿CUÁNTOS NIÑOS NOS ACOMPAÑAN?</label>
+
                 <input
-                  placeholder="Teléfono: "
-                  type="tel"
+                  type="number"
                   className="input-field"
-                  value={formData.telefono}
-                  onChange={e => setFormData({ ...formData, telefono: e.target.value })}
+                  value={formData.kids}
+                  onChange={e => setFormData({ ...formData, kids: e.target.value })}
                   required
-                  style={{
-                    clipPath: "polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 80% 100%, 0 100%, 0% 80%, 0% 20%)"
+                style={{
+                    clipPath: "polygon(0 0, 80% 0%, 100% 20%, 100% 80%, 100% 100%, 20% 100%, 0% 80%, 0% 20%)"
                   }}
+
                 />
 
                 </div>
+                </div>
+
+
+                
+                 <div
+                className='masker'
+                style={{
+                     clipPath: "polygon(18% 0%, 80% 0%, 100% 0, 100% 82%, 82% 100%, 0 100%, 0% 80%, 0% 18%)"
+
+                  }}
+                >
+
+                <div className="input-inner">
+                  <label className="fake-label">¿CUÁNTOS ADULTOS NOS ACOMPAÑAN?</label>
+
+
+                <input
+                  type="number"
+                  className="input-field"
+                  value={formData.adults}
+                  onChange={e => setFormData({ ...formData, adults: e.target.value })}
+                  required
+                style={{
+                      clipPath: "polygon(18% 0%, 80% 0%, 100% 0, 100% 82%, 82% 100%, 0 100%, 0% 80%, 0% 18%)"
+
+                  }}
+
+                />
+                </div>
+                </div>
+
 
                 <div className='jugar-wrapper'>
                 <button className='jugar' type="submit">Aceptar</button>
@@ -224,7 +282,7 @@ export default function UIOverlay() {
 
 
           <div style={{ backgroundSize: 'cover', padding: 20, borderRadius: "10px", paddingBottom: "15%" }}>
-            <h2 className='titlecoleccion'><span style={{fontFamily:"Rowdies",color:"#FFCC00"}} ></span>mis planetas<span style={{fontFamily:"Cygun", color:"#FFCC00"}} ></span></h2>
+            <h2 className='titlecoleccion'><span style={{fontFamily:"Cybun", fontWeight:200,color:"#FFCC00"}} ></span>mis planetas<span style={{fontFamily:"Cygun", color:"#FFCC00"}} ></span></h2>
 
             
             <div style={{ 
