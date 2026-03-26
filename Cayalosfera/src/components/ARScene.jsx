@@ -151,16 +151,28 @@ export default function ARScene({ path, animalPaths = [] }) {
               />
             )}
 
+            
+            {index === 7 ? (
+                <a-gltf-model
+                  src="/modelos/uranus.glb"
+                  scale="0.2 0.2 0.2"
+                  position="0 0.5 0"
+                  rotation="0 0 0"
+                  animation="property: rotation; to: 0 360 0; loop: true; dur: 16000; easing: linear"
 
-            <a-gltf-model
-              src={modelUrl}
-              scale="0.12 0.12 0.12"
-              position="0 0 0"
-              animation-mixer
-              make-unlit
-              animation="property: rotation; to: 0 360 0; loop: true; dur: 16000; easing: linear"
-            ></a-gltf-model>
+                />
+              ) : (
+                <a-gltf-model
+                  src={modelUrl}
+                  scale="0.12 0.12 0.12"
+                  position="0 0 0"
+                  animation-mixer
+                  make-unlit
+                  animation="property: rotation; to: 0 360 0; loop: true; dur: 16000; easing: linear"
+                />
+              )}
 
+           
 
           </a-entity>
         ))}
