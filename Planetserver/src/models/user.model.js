@@ -17,6 +17,14 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    kids: {
+      type: String,
+      required: true,
+    },
+    adultos: {
+      type: String,
+      required: true,
+    },
     planeta_0: {
       type: Boolean,
       default: false,

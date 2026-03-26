@@ -10,7 +10,7 @@ const registrarUsuario = async (req, res) => {
     if (!nombre || !correo || !telefono || !kids  || !adultos  ) {
       return res.status(400).json({
         success: false,
-        message: "Todos los campos (nombre, correo, telefono) son obligatorios",
+        message: "Todos los campos (nombre, correo, telefono, niños acompañados, adultos acompañados) son obligatorios",
       });
     }
 
