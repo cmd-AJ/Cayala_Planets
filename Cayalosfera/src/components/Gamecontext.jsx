@@ -130,8 +130,7 @@ export const GameProvider = ({ children }) => {
     // 5. Check Win Condition
     if (newFoundList.length === 8) {
       setTimeout(() => {
-            // 3. Alert UI
-          Swal.fire({
+        Swal.fire({
           background: `url(${felicidadesImg})`,
           showConfirmButton: true,
           confirmButtonText: 'Aceptar',
@@ -139,14 +138,14 @@ export const GameProvider = ({ children }) => {
             container: 'my-swal-container',
             popup: 'swal-custom-popupgifs',
             confirmButton: 'my-swal-buttongifs',
-          }.then((result) => {
-              if (result.isConfirmed) {
-                window.open('/files/prueba_pdf.pdf', '_blank');
-              }
-            })
-        
-          });
+          },  // <-- close customClass here
+        }).then((result) => {  // <-- chain .then() on Swal.fire()
+          if (result.isConfirmed) {
+            window.open('/files/prueba_pdf.pdf', '_blank');
+          }
+        });
       }, 4000);
+
     }
   };
 

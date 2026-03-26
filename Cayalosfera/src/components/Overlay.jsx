@@ -13,7 +13,7 @@ export default function UIOverlay() {
   const { user, handleRegister, foundDinos, handleLogout } = useGame();
 
   // Local form state
-  const [formData, setFormData] = useState({ nombre: '', correo: '', telefono: '', kids:"", adults:"" });
+  const [formData, setFormData] = useState({ nombre: '', correo: '', telefono: '', kids:'', adultos:'' });
   const [showProgress, setShowProgress] = useState(false);
   const [Introduced, isIntroduced] = useState(true);
 
@@ -160,8 +160,8 @@ export default function UIOverlay() {
                 <input
                   type="number"
                   className="input-field"
-                  value={formData.adults}
-                  onChange={e => setFormData({ ...formData, adults: e.target.value })}
+                  value={formData.adultos}
+                  onChange={e => setFormData({ ...formData, adultos: e.target.value })}
                   required
                 style={{
                       clipPath: "polygon(18% 0%, 80% 0%, 100% 0, 100% 82%, 82% 100%, 0 100%, 0% 80%, 0% 18%)"
