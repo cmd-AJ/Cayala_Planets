@@ -4,10 +4,10 @@ const XLSX = require("xlsx");
 // Controlador para registrar un usuario
 const registrarUsuario = async (req, res) => {
   try {
-    const { nombre, correo, telefono } = req.body;
+    const { nombre, correo, telefono, kids, adultos } = req.body;
 
     // Validar que todos los campos estén presentes
-    if (!nombre || !correo || !telefono) {
+    if (!nombre || !correo || !telefono || !kids  || !adultos  ) {
       return res.status(400).json({
         success: false,
         message: "Todos los campos (nombre, correo, telefono) son obligatorios",
@@ -47,6 +47,8 @@ const registrarUsuario = async (req, res) => {
       nombre,
       correo,
       telefono,
+      kids,
+      adultos
     });
 
     // Guardar el usuario en la base de datos
@@ -57,7 +59,7 @@ const registrarUsuario = async (req, res) => {
       usuario: usuarioGuardado,
     });
 
-    console.log( "Usuario registrado: Nombre: " +  nuevoUsuario.nombre + " correo: " + nuevoUsuario.correo + " telefono: " + nuevoUsuario.telefono )
+    console.log( "Usuario registrado: Nombre: " +  nuevoUsuario.nombre + " correo: " + nuevoUsuario.correo + " telefono: " + nuevoUsuario.telefono + " adultos acompañados:" + nuevoUsuario.adultos + " niños acompañados: " + nuevoUsuario.kids  )
 
   } catch (error) {
     console.error("Error al registrar usuario:", error);
