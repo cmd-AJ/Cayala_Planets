@@ -109,18 +109,20 @@ export const GameProvider = ({ children }) => {
     console.log(ACcumulatorGIFS[newFoundList.length-1])
 
 
-    // 3. Alert UI
-    Swal.fire({
-    background: `url(${ACcumulatorGIFS[newFoundList.length - 1]})`,
-    showConfirmButton: true,
-    confirmButtonText: 'Aceptar',
-    customClass: {
-      container: 'my-swal-container',
-      popup: 'swal-custom-popupgifs',
-      confirmButton: 'my-swal-buttongifs',
-    }
-  
-    });
+    setTimeout(() => {
+        // 3. Alert UI
+        Swal.fire({
+            background: `url(${ACcumulatorGIFS[newFoundList.length - 1]})`,
+            showConfirmButton: true,
+            confirmButtonText: 'Aceptar',
+            customClass: {
+                container: 'my-swal-container',
+                popup: 'swal-custom-popupgifs',
+                confirmButton: 'my-swal-buttongifs',
+            }
+        });
+    }, 3000); // 3000 milliseconds = 3 seconds
+
 
     // 4. Update Server
     if (user?._id) {
