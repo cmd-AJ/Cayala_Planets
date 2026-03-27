@@ -141,7 +141,7 @@ export const GameProvider = ({ children }) => {
           },  // <-- close customClass here
         }).then((result) => {  // <-- chain .then() on Swal.fire()
           if (result.isConfirmed) {
-            window.open('/files/prueba_pdf.pdf', '_blank');
+            window.open('/files/CUPONERA_CAYALÓSFERA.pdf', '_blank');
           }
         });
       }, 4000);
