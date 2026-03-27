@@ -50,58 +50,55 @@ export default function ARScene({ path, animalPaths = [] }) {
       
     }
 
+
     const onTargetFound = (event) => {
-      const index = parseInt(event.target.getAttribute("data-index"));
-      // const audio = new Audio(`/audio/animal_${index}.mp3`);
+  const index = parseInt(event.target.getAttribute("data-index"));
+  const el = event.target;
 
-      // const audio = new Audio(`/audio/animal_${index}.mp3`);
+  // Clear any existing hide timer for this target
+  if (el._hideTimer) {
+    clearTimeout(el._hideTimer);
+    el._hideTimer = null;
+  }
 
-      // Show the interact button (was hidden by default)
-      // try {
-      //   if (btn) {
-      //     btn.classList.remove("hidden");
-      //     // ensure it's focusable / visible
-      //     btn.focus && btn.focus();
-      //     btn.onclick = () => {
-      //       audio.play().catch(e => console.log("Audio play blocked:", e));
-      //     }
-      //   }
-      // } catch (e) {
-      //   console.warn('Could not show interact button', e);
-      // }
+  // Make sure it's visible
+  el.setAttribute("visible", true);
 
-      targetEntities.forEach((el) => {
-        el.addEventListener("targetLost", () => {
-          btn.classList.add("hidden");
-          audio.pause();
-        });
-      });
+  if (!playedDinos.current.has(index)) {
+    playedDinos.current.add(index);
+    console.log("Indice", index);
+    handleDinoFound(index);
+  }
+};
 
-      // 2. TRIGGER ONLY ONCE: Check if already played
-      if (!playedDinos.current.has(index)) {
+  const onTargetLost = (event) => {
+    const el = event.target;
+
+    // Wait 3 seconds before hiding
+    el._hideTimer = setTimeout(() => {
+      el.setAttribute("visible", false);
+    }, 3000); // change this to however many seconds you want
+  };
+
+  const timer = setTimeout(() => {
+    targetEntities.forEach((el) => {
+      el.addEventListener("targetFound", onTargetFound);
+      el.addEventListener("targetLost", onTargetLost);
+    });
+  }, 1000);
+
+  return () => {
+    clearTimeout(timer);
+    targetEntities.forEach((el) => {
+      el.removeEventListener("targetFound", onTargetFound);
+      el.removeEventListener("targetLost", onTargetLost);
+      if (el._hideTimer) clearTimeout(el._hideTimer);
+    });
+  };
 
 
-        // Mark as played and update game state
-        playedDinos.current.add(index);
-        console.log("Indice", index)
-        handleDinoFound(index);
 
-
-      }
-    };
-
-    const timer = setTimeout(() => {
-      targetEntities.forEach((el) => {
-        el.addEventListener("targetFound", onTargetFound);
-      });
-    }, 1000);
-
-    return () => {
-      clearTimeout(timer);
-      targetEntities.forEach((el) => {
-        el.removeEventListener("targetFound", onTargetFound);
-      });
-    };
+    
   }, [handleDinoFound, btn, targetEntities]);
 
 
