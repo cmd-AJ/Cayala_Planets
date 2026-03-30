@@ -215,11 +215,22 @@ export default function UIOverlay() {
 
 
 
-      {foundDinos.length == 8 && (
+      {foundDinos.length === 8 && (
+
+        <>
+        
+
+          <div style={{fontFamily: 'Cygun', color: 'white' }} className='Aviso'>
+
+          </div>
+
+
+
+
         <div style={{
           pointerEvents: 'auto',
           position: 'absolute',
-          bottom: '10%',
+          bottom: '15%',
           left: '50%',
           transform: 'translateX(-50%)',
           display: 'flex',
@@ -227,12 +238,14 @@ export default function UIOverlay() {
           alignItems: 'center',
           gap: 6,
         }}>
+          
+
           <button
             onClick={() => {
               // Replace with your actual cuponera handler
               window.open('/files/CUPONERA_CAYALOSFERA.pdf', '_blank');
             }}
-            style={{ padding: '4vw 2vw', fontSize: '0.9rem',
+            style={{ padding: '4vw 2vw', fontSize: '0.8rem',
                     backgroundColor:"#E68C00",
                     fontFamily: 'Cygun',
                     color:"white",
@@ -240,11 +253,13 @@ export default function UIOverlay() {
 
              }}
           >
-          ¡Disfruta tu cuponera!
+          ¡Disfruta de tu cuponera!
           </button>
           <span style={{ color: '#E68C00', fontFamily: 'Cygun', fontSize: '1rem' }}>
           </span>
         </div>
+        </>
+
       )}
 
         <div style={{ pointerEvents: 'auto', padding: 10, display: 'flex', justifyContent: 'space-between' }}>

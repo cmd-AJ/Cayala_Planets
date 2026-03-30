@@ -526,3 +526,22 @@ input-field:focus {
   z-index: 2;
   font-size: 0.5rem;
 }
+
+
+.Aviso{
+  position: absolute;
+  top: 24%; 
+  left: 10%; 
+  width: 80%;
+  height: 40%;
+  font-size: 2rem;
+  background: url('../../assets/overlay/felicidadesahora.png');
+  background-size: cover;
+  background-position: center; /* Para que no se corte lo importante */
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+}
