@@ -243,7 +243,7 @@ export default function UIOverlay() {
           <button
             onClick={() => {
               // Replace with your actual cuponera handler
-              window.open('/files/CUPONERA_CAYALOSFERA.pdf', '_blank');
+              window.open('/files/CUPONERA_CAYALOSFER.pdf', '_blank');
             }}
             style={{ padding: '4vw 2vw', fontSize: '0.8rem',
                     backgroundColor:"#E68C00",
