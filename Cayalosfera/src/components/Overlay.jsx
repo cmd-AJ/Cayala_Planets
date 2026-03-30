@@ -46,6 +46,9 @@ export default function UIOverlay() {
     return (
       <>
 
+
+      
+
       {Introduced ? (
           <div className={`overlay-container ${!Introduced ? 'hidden' : ''}`}>
 
@@ -209,6 +212,40 @@ export default function UIOverlay() {
         </button>
         
       </div>
+
+
+
+      {foundDinos.length == 8 && (
+        <div style={{
+          pointerEvents: 'auto',
+          position: 'absolute',
+          bottom: '10%',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: 6,
+        }}>
+          <button
+            onClick={() => {
+              // Replace with your actual cuponera handler
+              window.open('/files/CUPONERA_CAYALOSFERA.pdf', '_blank');
+            }}
+            style={{ padding: '4vw 2vw', fontSize: '0.9rem',
+                    backgroundColor:"#E68C00",
+                    fontFamily: 'Cygun',
+                    color:"white",
+                    clipPath: "polygon(18% 0%, 80% 0%, 100% 0, 100% 82%, 82% 100%, 0 100%, 0% 80%, 0% 18%)",
+
+             }}
+          >
+          ¡Disfruta tu cuponera!
+          </button>
+          <span style={{ color: '#E68C00', fontFamily: 'Cygun', fontSize: '1rem' }}>
+          </span>
+        </div>
+      )}
 
         <div style={{ pointerEvents: 'auto', padding: 10, display: 'flex', justifyContent: 'space-between' }}>
         {[...Array(8)].map((_, i) => {

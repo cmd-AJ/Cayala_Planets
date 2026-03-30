@@ -31,6 +31,8 @@ function App() {
 
     <div className="App">
       <InfoButton></InfoButton>
+      <InfoButton></InfoButton>
+
       <GameProvider>
         <div className="App" style={{ position: 'relative', width: '100vw', height: '100vh' }}>
           <ARScene path={mindFilePath} animalPaths={animalModels} />
